@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Emissões de CO₂ - Calcule o impacto ambiental dos seus deslocamentos">
+    <title>CalculadoraCO₂ - Calculadora de Emissões de Carbono</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 CalculadoraCO₂</h1>
+            <p class="subtitle">Calcule suas emissões de carbono por deslocamento</p>
+        </header>
+
+        <main>
+            <section class="calculator-section">
+                <div class="form-group">
+                    <label for="vehicle-type">Tipo de Veículo:</label>
+                    <select id="vehicle-type" onchange="updateEmissionFactor()">
+                        <option value="carro">🚗 Carro</option>
+                        <option value="moto">🏍️ Moto</option>
+                        <option value="onibus">🚌 Ônibus</option>
+                        <option value="caminhao">🚚 Caminhão</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="distance">Distância (km):</label>
+                    <input 
+                        type="number" 
+                        id="distance" 
+                        placeholder="Insira a distância" 
+                        min="0" 
+                        step="0.1"
+                        onchange="calculateEmissions()"
+                        oninput="calculateEmissions()"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency">Frequência:</label>
+                    <select id="frequency" onchange="calculateEmissions()">
+                        <option value="1">Uma única vez</option>
+                        <option value="7">Por semana</option>
+                        <option value="30">Por mês</option>
+                        <option value="365">Por ano</option>
+                    </select>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateEmissions()">Calcular Emissões</button>
+            </section>
+
+            <section class="results-section" id="results" style="display: none;">
+                <h2>Resultado</h2>
+                <div class="result-card">
+                    <p class="result-label">Emissão Total de CO₂:</p>
+                    <p class="result-value"><span id="total-emissions">0</span> kg CO₂</p>
+                    <p class="result-period">(<span id="period-text">Uma única vez</span>)</p>
+                </div>
+
+                <div class="comparison-section">
+                    <h3>Contexto</h3>
+                    <div class="comparison-item">
+                        <p>Equivalente a:</p>
+                        <ul>
+                            <li>🌳 <span id="trees-equivalent">0</span> árvores absorvendo CO₂ em 1 ano</li>
+                            <li>✈️ <span id="flights-equivalent">0</span> voos transatlânticos</li>
+                            <li>🚗 <span id="car-km-equivalent">0</span> km dirigindo um carro médio</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetCalculator()">Nova Cálculo</button>
+            </section>
+
+            <section class="info-section">
+                <h2>ℹ️ Fatores de Emissão</h2>
+                <div class="info-table">
+                    <div class="info-row">
+                        <strong>🚗 Carro:</strong>
+                        <span>190 g CO₂/km (médio)</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>🏍️ Moto:</strong>
+                        <span>80 g CO₂/km</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>🚌 Ônibus:</strong>
+                        <span>70 g CO₂/km (por passageiro)</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>🚚 Caminhão:</strong>
+                        <span>800 g CO₂/km</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 CalculadoraCO₂ | Ajude a reduzir emissões de carbono 🌱</p>
+            <p>Dados baseados em estudos ambientais reais</p>
+        </footer>
+    </div>
+
+    <script src="src/js/calculator.js"></script>
+</body>
+</html>

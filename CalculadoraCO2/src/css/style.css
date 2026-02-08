@@ -1,0 +1,333 @@
+/* Reset e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --accent-color: #3498db;
+    --warning-color: #e74c3c;
+    --bg-light: #ecf0f1;
+    --bg-dark: #2c3e50;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 30px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+/* Main content */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Seção calculadora */
+.calculator-section {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.calculator-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* Grupos de formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+/* Botões */
+.calculate-btn,
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    margin-top: 10px;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background: var(--accent-color);
+    color: white;
+    margin-top: 20px;
+    max-width: 300px;
+}
+
+.reset-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Seção de resultados */
+.results-section {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.result-card {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 1em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.result-value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.result-period {
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+/* Seção de comparação */
+.comparison-section {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.comparison-section h3 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.comparison-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comparison-item li {
+    padding: 10px 0;
+    color: var(--text-dark);
+    font-size: 0.95em;
+}
+
+.comparison-item li:before {
+    content: "✓ ";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Seção de informações */
+.info-section {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.info-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.info-row {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-row strong {
+    color: var(--text-dark);
+}
+
+.info-row span {
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .calculator-section,
+    .results-section,
+    .info-section {
+        padding: 20px;
+    }
+
+    .result-value {
+        font-size: 2em;
+    }
+
+    .info-table {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header {
+        margin-bottom: 20px;
+        padding: 15px 0;
+    }
+
+    .result-value {
+        font-size: 1.8em;
+    }
+
+    .form-group select,
+    .form-group input {
+        padding: 10px;
+    }
+
+    .calculate-btn,
+    .reset-btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+}

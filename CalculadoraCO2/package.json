@@ -1,0 +1,30 @@
+{
+  "name": "CalculadoraCO2",
+  "version": "1.0.0",
+  "description": "Calculadora de emissões de CO₂ para diferentes tipos de veículos",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "co2",
+    "calculator",
+    "emissions",
+    "environment",
+    "sustainability",
+    "carbon-footprint",
+    "green",
+    "eco-friendly"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/CalculadoraCO2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/CalculadoraCO2/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/CalculadoraCO2#readme"
+}
