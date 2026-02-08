@@ -3,7 +3,7 @@
 
 
 ## 📚 Descrição:
-***O repositório é um Lab. (laboratório) com intenção de aplicar conceitos I.A. (GitHub Copilot) no desenvolvimento de uma ferramenta de simulação (calculadora de CO2).***
+***O repositório é um Lab. (laboratório) com intenção de aplicar conceitos de I.A. (GitHub Copilot) no desenvolvimento de uma ferramenta de simulação (calculadora de CO2).***
 
 ## ✅ Tópicos de Contrução:
 - *Simulador de CO2;*
